@@ -10,11 +10,30 @@ import cv2 as cv
 img = cv.imread('D:\Erfan-Python\Python Erfan\OpenCv\Project_01\Images\Cats\Cat1.jpg')
 
 # reading videos
+capture = cv.VideoCapture("D:\Erfan-Python\Python Erfan\OpenCv\Project_01\Videos\SampleVideo1.mp4")
 # ! 0 mean your web cam
 #capture = cv.VideoCapture(0)
 
 # display image
-cv.imshow('Cat1', img)
+#cv.imshow('Cat1', img)
+
+# ! reading videos is kind of defferent with reading images we need use while loop
+while True:
+    # read frame and isTrue get we can read a frame or not
+    isTrue, frame = capture.read()
+
+    # Display each frame of video
+    cv.imshow('Sample_video_1', frame)
+
+    # stop video from playing
+    if cv.waitKey(20) & 0xff==ord('d'):
+        # 0xff==ord('d') means if we press d on keyborad
+        # stop play video
+        break
+
+capture.release()
+cv.destroyAllWindows()
+
 
 # wait for key press
 cv.waitKey(0)
