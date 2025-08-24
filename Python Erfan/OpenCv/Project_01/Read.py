@@ -36,6 +36,6 @@ cv.destroyAllWindows()
 
 
 # wait for key press
-cv.waitKey(0)
+# cv.waitKey(0)
 
 
