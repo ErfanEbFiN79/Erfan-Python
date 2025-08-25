@@ -43,13 +43,7 @@ for i in range(500):
         else:
             chess_ground[i][j] = 255,255,255
 
-
-
-
-
 # chess_ground[::2] = 255,255,255
 cv.imshow('Chess', chess_ground)
-
-
 
 cv.waitKey(0)
